@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.monitoramento.HelloController">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding:20;">
+            <Label text="Painel de Monitoramento Corporativo"
+                   style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+            <Label text="Registro de Novo Usuário"/>
+
+            <Label text="Insira os dados biométricos para processamento do índice de massa corporal corporativo."/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="20" style="-fx-padding:20;">
+
+            <VBox spacing="10"
+                  style="-fx-border-color:lightgray;
+                         -fx-border-width:1;
+                         -fx-padding:15;">
+
+                <TextField fx:id="txtNome"
+                           promptText="Ex: Maria Silva"/>
+
+                <TextField fx:id="txtEmail"
+                           promptText="exemplo@saudecorp.com"/>
+
+                <HBox spacing="10">
+
+                    <TextField fx:id="txtPeso"
+                               promptText="Peso (kg)"/>
+
+                    <TextField fx:id="txtAltura"
+                               promptText="Altura (m)"/>
+
+                </HBox>
+
+                <Button text="Calcular e Adicionar"
+                        onAction="#calcularAdicionar"
+                        style="-fx-background-color:black;
+                               -fx-text-fill:white;"/>
+
+            </VBox>
+
+            <VBox prefWidth="350"
+                  style="-fx-background-color:#222;
+                         -fx-padding:20;">
+
+                <Label text="Monitoramento Ativo"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:18px;
+                              -fx-font-weight:bold;"/>
+
+                <Label wrapText="true"
+                       text="Acompanhe a evolução da saúde dos seus colaboradores em tempo real com relatórios detalhados."
+                       style="-fx-text-fill:white;"/>
+
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <bottom>
+        <TableView fx:id="tabela">
+
+            <columns>
+
+                <TableColumn fx:id="colNome"
+                             text="Nome"
+                             prefWidth="250"/>
+
+                <TableColumn fx:id="colEmail"
+                             text="Email"
+                             prefWidth="350"/>
+
+                <TableColumn fx:id="colImc"
+                             text="IMC"
+                             prefWidth="150"/>
+
+            </columns>
+
+        </TableView>
+    </bottom>
+
+</BorderPane>
